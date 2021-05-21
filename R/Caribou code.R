@@ -54,6 +54,7 @@ BC <- get_stamenmap(coordinates, maptype = "watercolor")
 lst.rd <- readGPX('C://Users//PC//Downloads//Directions_from_57_-122_to_54_-123.gpx')
 df <- lst.rd$tracks[[1]][[1]] 
 
+
 ggplot(df, aes(x = lon, y = lat)) +
   coord_quickmap() +
   geom_point()
@@ -129,4 +130,3 @@ individual_crossing <- function(d) {
 individual_crossing(caribou)
 
 
-file.exists("~/.ssh/id_rsa.pub")
