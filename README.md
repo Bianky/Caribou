@@ -1,2 +1,2 @@
 # Caribou
-Analysis of Caribou movement along a highway 97 in British Columbia
+Analysis of Caribou movement along Highway 97 in British Columbia
