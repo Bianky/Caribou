@@ -19,11 +19,17 @@ I collected caribou tracking data set from BC Ministri of environment (2014) and
 For a more precise visualization, I made a static map of caribou movement and eventually a facet map with one caribou per individual map. In
 both visualizations we can see that only two caribou from 12 crossed the highway even though they were nearby.
 
+![](https://github.com/Bianky/Caribou/blob/main/Figures/individual_crossing.png)
+
 Despite the negative impacts of infrastructure in natural environment there are approaches to mitigate these destructive effects on biodiversity. One of them is a construction of wildlife crossings, as seen on a picture below.
+
+![](https://canadiangeographic.ca/wp-content/uploads/2022/02/img_0058-1200x800.jpg)
 
 ## Elk Movement
 
 Wildlife overpasses or also known as Eco ducts are large bridges covered with vegetation which enable wildlife to freely cross through the highway lowering spatial restrictions and risk of being hit by the car. With that being said, I searched for Eco ducts in Canada through google maps, collected data of their coordinates and questioned whether there can be a correlation of increased number of animals passing through highway with higher number of Eco ducts. Moreover, I made a second animation based on elk data set and inspected whether there is an animal movement crossing the coordinates of Eco ducts.
+
+![](https://github.com/Bianky/Caribou/blob/main/Figures/Elk.gif)
 
 The results were not significant and there was minimal movement through Eco ducts coordinates. Lack of data is a significant limitation which needs to be considered.
 
