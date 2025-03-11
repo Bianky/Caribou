@@ -28,7 +28,7 @@ library(tools)
 
   I collected a caribou tracking data set from BC Ministri of environment (2014) and tidied it in a suitable way. Furthermore, I developed a map of British Columbia and added a top layer of highway 97 with data points collected from google maps. As a data analysis I chose to perform an animation to observe whether caribou cross the highway. 
 
-```{r, echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, fig.keep='all'}
+``` r
 # Load Data --------------------------------------------------------------------
 
 caribou <- read.csv("C:\\Users\\PC\\Downloads\\Mountain caribou in British Columbia-gps.csv", header = TRUE)
