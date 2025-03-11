@@ -4,7 +4,7 @@
 
 
 
-```{r setup, include=FALSE}
+``` r
 library(tidyverse)
 library(lubridate)
 library(osmdata)
