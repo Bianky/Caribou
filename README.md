@@ -2,37 +2,21 @@
 ### *Restrictions of Caribou Migration by Road Construction*
 #### Bianka Fábryová (21.5. 2021)
 
-
-
-``` r
-library(tidyverse)
-library(lubridate)
-library(osmdata)
-library(ggmap)
-library(plotKML)
-library(gganimate)
-library(tools)
-```
-
  ![](https://images.rove.me/w_1920,q_85/clao0dacen0d1afqsiwj/alaska-caribou-spring-migration.jpg)
 
+In today’s world of consistently increasing human population, it is becoming ever more important to focus on our coexistence with wildlife. As a result of the significant global population growth, there is a raise in demand for human habitation developments which consequentially, as they expand to natural areas, are one of the main threats to biodiversity. This process is referred to as habitat fragmentation, a reduction of wildlife habitat into smaller, distant segments (Crooks, et al., 2017). Thus, the population size of inhabiting species declines, possibly resulting in a collapse of ecosystem and a probable local extinction. 
 
+One of the main causes for habitat fragmentation is road construction, necessary for economic development of a country. Infrastructure construction in natural environment has numerous negative effects on the biodiversity, including population size reductions due to decreased quality of habitat as well as increase in mortality as a result of attempts to cross a road, and declines in colonization of patches (Sijtsma, et al., 2020). All these possible outcomes are not harmful only to wild biodiversity, but there are a threat to us as well, as humans are dependent on ecosystems.
 
-  In today’s world of consistently increasing human population, it is becoming ever more important to focus on our coexistence with wildlife. As a result of the significant global population growth, there is a raise in demand for human habitation developments which consequentially, as they expand to natural areas, are one of the main threats to biodiversity. This process is referred to as habitat fragmentation, a reduction of wildlife habitat into smaller, distant segments (Crooks, et al., 2017). Thus, the population size of inhabiting species declines, possibly resulting in a collapse of ecosystem and a probable local extinction. 
-  One of the main causes for habitat fragmentation is road construction, necessary for economic development of a country. Infrastructure construction in natural environment has numerous negative effects on the biodiversity, including population size reductions due to decreased quality of habitat as well as increase in mortality as a result of attempts to cross a road, and declines in colonization of patches (Sijtsma, et al., 2020). All these possible outcomes are not harmful only to wild biodiversity, but there are a threat to us as well, as humans are dependent on ecosystems.
-  Species that are significantly influenced by habitat fragmentation are large mammals which naturally migrate extensive distances. Caribou, from the taxon *Rangifer tarandus*, is the world’s most travelled terrestrial non-human animal (Plante, et al., 2018). It is native to Northern hemisphere inhabiting tundra and boreal forest biomes. Therefore, in my study I decided to visualize the possible impacts of habit segmentation on caribou movement regarding a question: *Does infrastructure restrict caribou movement in British Columbia, Canada?*.
+Species that are significantly influenced by habitat fragmentation are large mammals which naturally migrate extensive distances. Caribou, from the taxon *Rangifer tarandus*, is the world’s most travelled terrestrial non-human animal (Plante, et al., 2018). It is native to Northern hemisphere inhabiting tundra and boreal forest biomes. Therefore, in my study I decided to visualize the possible impacts of habit segmentation on caribou movement regarding a question: *Does infrastructure restrict caribou movement in British Columbia, Canada?*.
 
 ## Caribou Movement
 
-  I collected a caribou tracking data set from BC Ministri of environment (2014) and tidied it in a suitable way. Furthermore, I developed a map of British Columbia and added a top layer of highway 97 with data points collected from google maps. As a data analysis I chose to perform an animation to observe whether caribou cross the highway. 
+I collected caribou tracking data set from BC Ministri of environment (2014) and tidied it in a suitable way. Furthermore, I developed a map of British Columbia and added a top layer of highway 97 with data points collected from google maps. As a data analysis I chose to perform an animation to observe whether caribou cross the highway. 
 
 ![](https://github.com/Bianky/Caribou/blob/main/Figures/Caribou.gif)
 
-
-
-
-
-  For a more precise visualization, I made a static map of caribou movement and eventually a facet map with one caribou per individual map. In
+For a more precise visualization, I made a static map of caribou movement and eventually a facet map with one caribou per individual map. In
 both visualizations we can see that only two caribou from 12 crossed the highway even though they were nearby.
 
 ```{r echo=FALSE}
