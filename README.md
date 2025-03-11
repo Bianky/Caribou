@@ -1,4 +1,4 @@
-## The Case of Caribou Movement
+# The Case of Caribou Movement
 ### *Restrictions of Caribou Migration by Road Construction*
 #### Bianka Fábryová (21.5. 2021)
 
