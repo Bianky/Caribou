@@ -29,7 +29,8 @@ library(tools)
 ``` r
 # Load Data --------------------------------------------------------------------
 
-caribou <- read.csv("C:\\Users\\PC\\Downloads\\Mountain caribou in British Columbia-gps.csv", header = TRUE)
+caribou <- read.csv("[C:\\Users\\PC\\Downloads\\Mountain caribou in British Columbia-gps.csv](https://raw.githubusercontent.com/Bianky/Caribou/main/Data/Mountain%20caribou%20in%20British%20Columbia-gps.csv
+)", header = TRUE)
 
 # Tidy Data --------------------------------------------------------------------
 
