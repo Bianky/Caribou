@@ -1,4 +1,4 @@
-# The Case of Caribou Movement
+# Analysis of Caribou Movement in British Columbia
 ### *Restrictions of Caribou Migration by Road Construction*
 #### Bianka Fábryová (21.5. 2021)
 
@@ -22,80 +22,15 @@ library(tools)
   One of the main causes for habitat fragmentation is road construction, necessary for economic development of a country. Infrastructure construction in natural environment has numerous negative effects on the biodiversity, including population size reductions due to decreased quality of habitat as well as increase in mortality as a result of attempts to cross a road, and declines in colonization of patches (Sijtsma, et al., 2020). All these possible outcomes are not harmful only to wild biodiversity, but there are a threat to us as well, as humans are dependent on ecosystems.
   Species that are significantly influenced by habitat fragmentation are large mammals which naturally migrate extensive distances. Caribou, from the taxon *Rangifer tarandus*, is the world’s most travelled terrestrial non-human animal (Plante, et al., 2018). It is native to Northern hemisphere inhabiting tundra and boreal forest biomes. Therefore, in my study I decided to visualize the possible impacts of habit segmentation on caribou movement regarding a question: *Does infrastructure restrict caribou movement in British Columbia, Canada?*.
 
-# Caribou Movement
+## Caribou Movement
 
   I collected a caribou tracking data set from BC Ministri of environment (2014) and tidied it in a suitable way. Furthermore, I developed a map of British Columbia and added a top layer of highway 97 with data points collected from google maps. As a data analysis I chose to perform an animation to observe whether caribou cross the highway. 
 
-``` r
-# Load Data --------------------------------------------------------------------
-
-caribou <- read.csv("https://raw.githubusercontent.com/Bianky/Caribou/main/Data/Mountain%20caribou%20in%20British%20Columbia-gps.csv", header = TRUE)
-
-# Tidy Data --------------------------------------------------------------------
-
-caribou <- caribou %>% mutate(datetime = as_datetime(timestamp))
-caribou <- tidyr::separate(caribou, timestamp, c("date", "time"), sep = " ")
-caribou <- tidyr::separate(caribou, date, c("year", "month", "day"), sep = "-")
-
-caribou <- caribou %>% 
-  mutate(location.long = as.double(location.long),
-         location.lat = as.double(location.lat),
-         year = as.numeric(year),
-         month = as.numeric(month),
-         day = as.numeric(day),
-         time = parse_time(time, "%H:%M:%S"))
-
-caribou <- caribou %>% rename(AnimalID = individual.local.identifier)
+![](https://github.com/Bianky/Caribou/blob/main/Figures/Caribou.gif)
 
 
-#selecting year 2014 - 2016 (last accessible years in data set)
-caribou <- caribou %>% 
-  filter(year == "2014" | year == "2015" | year == "2016")
 
-#adjusting data points along the highway
-caribou <- caribou %>%
-  filter(location.long > -123 & location.long < - 122)
 
-# Background Map ---------------------------------------------------------------
-
-coordinates <- c(-124, 55, -121.5, 55.75)
-
-query <- coordinates %>%
-  opq() 
-#%>%
-# add_osm_feature("amenity") 
-
-str(query)
-
-BC <- get_stamenmap(coordinates, maptype = "watercolor")
-
-# Highway map layer ------------------------------------------------------------
-
-#loading data from google earth
-lst.rd <- readGPX('C://Users//PC//Downloads//Directions_from_57_-122_to_54_-123.gpx')
-df <- lst.rd$tracks[[1]][[1]] 
-
-# Animation --------------------------------------------------------------------
-
-points <- ggmap(BC) +
-  geom_path(aes(x = lon,
-                y = lat),
-            data = df,
-            colour = "red4",
-            size = .2) +
-  geom_point(data = caribou, 
-             aes(x = location.long, y = location.lat, color = AnimalID),
-             size = 2.5, show.legend = NA,inherit.aes = FALSE) +
-  geom_text(aes(x = -121.9, y = 55.688), label = "Highway 97", color = "red4") +
-  labs(x = "Longtitude", y = "Latitude", title = "Caribou movement", caption = "Caribou movement (color indicating individual caribou) in British Columbia, Canada") +
-  theme_minimal() +
-  theme(legend.position = "none") +
-  transition_time(datetime) +
-  labs(subtitle = "Datetime: {frame_time}") +
-  shadow_wake(wake_length = 0.1, alpha = FALSE) 
-
-animate(points, renderer = gifski_renderer(), duration = 25, fps = 8)
-```
 
   For a more precise visualization, I made a static map of caribou movement and eventually a facet map with one caribou per individual map. In
 both visualizations we can see that only two caribou from 12 crossed the highway even though they were nearby.
