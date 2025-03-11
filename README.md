@@ -1,6 +1,6 @@
 # Analysis of Caribou Movement in British Columbia
 ### *Restrictions of Caribou Migration by Road Construction*
-#### Bianka Fábryová (21.5. 2021)
+#### Bianka Fábryová (May 2021)
 
  ![](https://images.rove.me/w_1920,q_85/clao0dacen0d1afqsiwj/alaska-caribou-spring-migration.jpg)
 
