@@ -3,8 +3,7 @@ title: "The Case of Caribou Movement"
 subtitle: "*Restrictions of Caribou Migration by Road Construction*"
 author: "Bianka Fábryová"
 date: "21.5. 2021"
-output: 
-  md_document:
+output: md_document
     variant: markdown_github
     toc: true
     toc_depth: 2
