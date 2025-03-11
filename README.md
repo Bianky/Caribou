@@ -1,8 +1,8 @@
-# "The Case of Caribou Movement"
-## subtitle: "*Restrictions of Caribou Migration by Road Construction*"
-author: "Bianka Fábryová"
-date: "21.5. 2021"
-output: github_document
+# The Case of Caribou Movement
+## *Restrictions of Caribou Migration by Road Construction*
+## Bianka Fábryová
+### 21.5. 2021
+
 
 
 ```{r setup, include=FALSE}
